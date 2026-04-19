@@ -12,11 +12,7 @@
 - CUDA Version: 13.2
 - cuDNN Version: 9.19
 - Framework: PyTorch
-```python
-import torch
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print("Using device:", device)
-```
+
 
 ---
 ##  Workflow
