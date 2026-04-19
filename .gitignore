@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+.env
+
+# Logs
+*.log
+
+# IDE (PyCharm)
+.idea/
+
+# Model files (VERY IMPORTANT)
+*.pt
+*.ckpt
+*.onnx
+
+# Large folders (DATASETS - DO NOT UPLOAD)
+metal_nut/
+yolo_metal_nut/
+
+# Training / output folders
+runs/
+results/
+
+# OS files
+.DS_Store
+Thumbs.db
