@@ -67,7 +67,7 @@ print("Using device:", device)
 ![Result](output_results/result_005.jpg)
 
 
-## 📊 Output Example
+## Output Example
 
 * is_anomaly: True / False
 * defect_type: scratch / dent / unknown
