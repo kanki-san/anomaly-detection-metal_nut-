@@ -60,7 +60,7 @@ def write_empty_labels(path):
         pass
 
 
-# 🔥 TRAIN
+
 def convert_train():
     test_dir = os.path.join(DATASET_PATH, "test")
     gt_dir = os.path.join(DATASET_PATH, "ground_truth")
@@ -71,7 +71,7 @@ def convert_train():
         if not os.path.isdir(main_path):
             continue
 
-        # GOOD images
+
         if main_type == "good":
             files = os.listdir(main_path)
             split_idx = int(0.8 * len(files))
@@ -91,7 +91,7 @@ def convert_train():
                 cv2.imwrite(f"{OUTPUT_PATH}/images/train/{out_stem}.png", img)
                 write_empty_labels(f"{OUTPUT_PATH}/labels/train/{out_stem}.txt")
 
-        # DEFECT images
+
         elif main_type == "defect":
             for defect_type in os.listdir(main_path):
                 img_folder = os.path.join(main_path, defect_type)
@@ -120,7 +120,7 @@ def convert_train():
 
                     labels_path = f"{OUTPUT_PATH}/labels/train/{out_stem}.txt"
 
-                    # correct mask path
+
                     mask_path = os.path.join(
                         gt_dir, defect_type, f"{stem}_mask.png"
                     )
@@ -151,7 +151,7 @@ def convert_train():
                         f.write("\n".join(lines))
 
 
-# 🔥 VAL
+
 def convert_val():
     test_dir = os.path.join(DATASET_PATH, "test")
     gt_dir = os.path.join(DATASET_PATH, "ground_truth")
@@ -162,7 +162,7 @@ def convert_val():
         if not os.path.isdir(main_path):
             continue
 
-        # GOOD
+
         if main_type == "good":
             files = os.listdir(main_path)
             split_idx = int(0.8 * len(files))
@@ -181,7 +181,7 @@ def convert_val():
                 cv2.imwrite(f"{OUTPUT_PATH}/images/val/{out_stem}.png", img)
                 write_empty_labels(f"{OUTPUT_PATH}/labels/val/{out_stem}.txt")
 
-        # DEFECT
+
         elif main_type == "defect":
             for defect_type in os.listdir(main_path):
                 img_folder = os.path.join(main_path, defect_type)

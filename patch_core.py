@@ -7,7 +7,7 @@ from torch.utils.checkpoint import checkpoint
 
 
 def main():
-    # Use Path for cross-platform compatibility
+
     ROOT_PATH = Path("K:/Projects/fail2/metal_nut")
 
     # Folder datamodule
@@ -17,10 +17,10 @@ def main():
         normal_dir="train/good",
         abnormal_dir="test/defect",
         normal_test_dir="test/good",
-        num_workers=0,  # Set to 0 to avoid multiprocessing issues on Windows
+        num_workers=0,
     )
 
-    # REQUIRED: Setup the datamodule
+
     datamodule.setup()
 
     model = Patchcore(
@@ -38,7 +38,7 @@ def main():
         max_epochs=10,
     )
 
-    # Use engine.train() instead of engine.fit()
+
     engine.train(datamodule=datamodule, model=model)
     engine.test(datamodule=datamodule, model=model)
 
